@@ -53,26 +53,146 @@ URL: https://code.google.com/p/io-2012-slides
         <li>Lead front-end engineer @appsbroker</li>
         <li>Open source on github.com/toddmotto</li>
         <li>Partnered with Intel in 2013</li>
-        <li>Pressing 'o' toggles overview mode</li>
-        <li>Pressing 'ESC' toggles off these goodies</li>
       </ul>
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Slide with (Smaller Font)</h2>
+      <h2>Today's session</h2>
     </hgroup>
-    <article class="smaller">
-      <ul>
-        <li>All <a href="http://google.com">links</a> open in new tabs.</li>
-        <li>To change that this, add <code>target="_self"</code> to the link.</li>
+    <article>
+      <ul class="build">
+        <li>Misconceptions of jQuery and JavaScript</li>
+        <li>Why JavaScript skills are important</li>
+        <li>Take your existing knowledge to learn JavaScript</li>
       </ul>
     </article>
   </slide>
 
-  <slide hidden>
-    Hidden slides are left out of the presentation.
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/fowd_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Misconceptions</h2>
+      <h3>of jQuery</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Misconceptions: jQuery</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>jQuery is a language</li>
+        <li>jQuery is easier than JavaScript</li>
+        <li>jQuery helps me write less code</li>
+        <li>jQuery will always have me covered</li>
+        <li>jQuery is the only way</li>
+        <li>jQuery is a must for cross-browser code</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/fowd_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Misconceptions</h2>
+      <h3>of JavaScript</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Misconceptions: JavaScript</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>JavaScript is impossible to learn</li>
+        <li>JavaScript isn't easily cross-browser</li>
+        <li>JavaScript is for programmers only</li>
+        <li>JavaScript isn't necessary, jQuery exists</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="segue dark quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/fowd_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <q>
+        JavaScript is the only language people feel like they don't need to learn to use
+      </q>
+      <div class="author">
+        Douglas Crockford<br>
+        PayPal
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>What have misconceptions done to JavaScript?</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Fear of JavaScript</li>
+        <li>Reliance on jQuery</li>
+        <li>New developers learning only jQuery</li>
+        <li>Copy and paste advocates</li>
+        <li>Misguided use of a core front-end language</li>
+        <li>"Just use jQuery"</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/fowd_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Power of jQuery</h2>
+      <h3>What jQuery has done for us</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Fantastic features</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Cross-browser consistencies</li>
+        <li>Easy and consistent API</li>
+        <li>Short learning curve</li>
+        <li>Selectors (albeit Sizzle)</li>
+        <li>Class manipulation</li>
+        <li>Great event methods</li>
+        <li>Makes difficult stuff a breeze (Ajax/XHR, animation)</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/fowd_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>JavaScript has listened</h2>
+      <h3>What's in store for the future of JavaScript</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>The time is now</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Cross-browser consistencies (standards!)</li>
+      	<li>Easy and consistent APIs</li>
+      	<li>Shorter learning curve</li>
+      	<li>Selectors (querySelector!)</li>
+      	<li>Class manipulation (classList API)</li>
+      	<li>Event standards; addEventListener</li>
+      	<li>Allows JS developers to build micro libs (Ajax/XHR, animation)</li>
+      </ul>
+    </article>
   </slide>
 
   <slide>
@@ -83,7 +203,7 @@ URL: https://code.google.com/p/io-2012-slides
     <article>
       <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
       <pre class="prettyprint" data-lang="javascript">
-&lt;script type='text/javascript'&gt;
+&lt;script&gt;
   // Say hello world until the user starts questioning
   // the meaningfulness of their existence.
   function helloWorld(world) {
@@ -308,7 +428,7 @@ function helloWorld(world) {
   </slide>
 
   <slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <aside class="gdbar"><img src="images/fowd_128.png"></aside>
     <hgroup class="auto-fadein">
       <h2>Segue Slide</h2>
       <h3>Subtitle Placeholder</h3>
@@ -323,7 +443,7 @@ function helloWorld(world) {
   </slide>
 
   <slide class="segue dark quote nobackground">
-    <aside class="gdbar right bottom"><img src="images/google_developers_icon_128.png"></aside>
+    <aside class="gdbar right bottom"><img src="images/fowd_128.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <q>
         This is an example of quote text.
@@ -351,7 +471,7 @@ function helloWorld(world) {
   </slide>
 
   <slide class="thank-you-slide segue nobackground">
-    <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+    <aside class="gdbar right"><img src="images/fowd_128.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <h2>&lt;Thank You!&gt;</h2>
       <p>Important contact information goes here.</p>

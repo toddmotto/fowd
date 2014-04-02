@@ -25,9 +25,9 @@ var SLIDE_CONFIG = {
     name: 'Todd Motto',
     company: 'Lead front-end engineer<br>Appsbroker',
     gplus: 'http://plus.google.com/1234567890',
-    twitter: '@yourhandle',
-    www: 'http://www.you.com',
-    github: 'http://github.com/you'
+    twitter: '@toddmotto',
+    www: 'http://toddmotto.com',
+    github: 'http://github.com/toddmotto'
   }/*, {
     name: 'Second Name',
     company: 'Job Title, Google',
