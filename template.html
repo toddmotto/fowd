@@ -44,7 +44,7 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Who am I?</h2>
+      <h2>Who?</h2>
     </hgroup>
     <article>
       <img src="images/todd.jpg" style="width: 250px; margin: 0 0 40px;">
@@ -66,7 +66,7 @@ URL: https://code.google.com/p/io-2012-slides
       <ul class="build">
         <li>Misconceptions of jQuery and JavaScript</li>
         <li>Why JavaScript skills are important</li>
-        <li>Take your existing knowledge to learn JavaScript</li>
+        <li>Take your existing knowledge of jQuery to learn JavaScript</li>
       </ul>
     </article>
   </slide>
@@ -81,16 +81,16 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Misconceptions: jQuery</h2>
+      <h2>Misconceptions: jQuery...</h2>
     </hgroup>
     <article>
       <ul class="build">
-        <li>jQuery is a language</li>
-        <li>jQuery is easier than JavaScript</li>
-        <li>jQuery helps me write less code</li>
-        <li>jQuery will always have me covered</li>
-        <li>jQuery is the only way</li>
-        <li>jQuery is a must for cross-browser code</li>
+        <li>is a language</li>
+        <li>is easier than JavaScript</li>
+        <li>helps me write less code</li>
+        <li>will always have me covered</li>
+        <li>is the only way</li>
+        <li>is a must for cross-browser code</li>
       </ul>
     </article>
   </slide>
@@ -105,28 +105,15 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Misconceptions: JavaScript</h2>
+      <h2>Misconceptions: JavaScript...</h2>
     </hgroup>
     <article>
       <ul class="build">
-        <li>JavaScript is impossible to learn</li>
-        <li>JavaScript isn't easily cross-browser</li>
-        <li>JavaScript is for programmers only</li>
-        <li>JavaScript isn't necessary, jQuery exists</li>
+        <li>is impossible to learn</li>
+        <li>isn't easily cross-browser</li>
+        <li>is for programmers only</li>
+        <li>isn't necessary because jQuery exists</li>
       </ul>
-    </article>
-  </slide>
-
-  <slide class="segue dark quote nobackground">
-    <aside class="gdbar right bottom"><img src="images/fowd_128.png"></aside>
-    <article class="flexbox vleft auto-fadein">
-      <q>
-        JavaScript is the only language people feel like they don't need to learn to use
-      </q>
-      <div class="author">
-        Douglas Crockford<br>
-        PayPal
-      </div>
     </article>
   </slide>
 
@@ -141,8 +128,21 @@ URL: https://code.google.com/p/io-2012-slides
         <li>New developers learning only jQuery</li>
         <li>Copy and paste advocates</li>
         <li>Misguided use of a core front-end language</li>
-        <li>"Just use jQuery"</li>
+        <li>"Just use jQuery"...</li>
       </ul>
+    </article>
+  </slide>
+
+  <slide class="segue dark quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/fowd_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <q>
+        JavaScript is the only language people feel like they don't need to learn to use
+      </q>
+      <div class="author">
+        Douglas Crockford<br>
+        <i>PayPal</i>
+      </div>
     </article>
   </slide>
 
@@ -156,10 +156,11 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Fantastic features</h2>
+      <h2>What jQuery has done for us</h2>
     </hgroup>
     <article>
       <ul class="build">
+        <li>Came at the right time</li>
         <li>Cross-browser consistencies</li>
         <li>Easy and consistent API</li>
         <li>Short learning curve</li>
@@ -202,35 +203,46 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <ul class="build">
-        <li>There is more to JavaScript than jQuery</li>
-        <li>Learn JavaScript, learn patterns and design</li>
-        <li>We need to be able to code without jQuery:</li>
+        <li>Learn JavaScript, learn library syntax and other libs</li>
+        <li>jQuery cannot provide everything JavaScript has to offer</li>
+        <li>Reliance on jQuery isn't sustainable</li>
+        <li>Learning JavaScript will better you on many levels:
           <ul class="build">
-            <li>Overcome any</li>
+            <li>Debugging/workarounds</li>
+            <li>Design patterns and structure</li>
+            <li>Career goals/interviews</li>
+            <li>Mastering a language</li>
           </ul>
-
-        <li>JavaScript is not about the browser anymore</li>
+        </li>
+        <li>jQuery is often restricting when mixing with JS</li>
+        <li>JavaScript is not about the browser anymore!</li>
       </ul>
     </article>
   </slide>
 
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/fowd_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>What's next?</h2>
+      <h3>Can we use existing knowledge to transition?</h3>
+    </hgroup>
+  </slide>
+
   <slide>
     <hgroup>
-      <h2>Code Slide (with Subtitle Placeholder)</h2>
-      <h3>Subtitle Placeholder</h3>
+      <h2>Class manipulation</h2>
+      <h3>jQuery and JS equivalents</h3>
     </hgroup>
     <article>
-      <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
-      <pre class="prettyprint" data-lang="javascript">
-&lt;script&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    <b>for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }</b>
-  }
-&lt;/script&gt;
+<pre class="prettyprint" data-lang="jquery">
+  // jQuery wraps your code in it's own Object
+  // which contains the addClass() method
+  $(element).addClass('myClass');
+</pre>
+<pre class="prettyprint" data-lang="javascript">
+  // JavaScript uses a DOMTokenList to contain
+  // the class names, returned via the classList Object
+  element.classList.add('myClass');
 </pre>
     </article>
   </slide>
@@ -476,16 +488,15 @@ function helloWorld(world) {
 
   <slide>
     <hgroup>
-      <h2>Slide with Iframe</h2>
+      <h2>Summing up (tl;dl)</h2>
     </hgroup>
     <article>
-      <iframe data-src="http://www.google.com/doodle4google/resources/history.html"></iframe>
-    </article>
-  </slide>
-
-  <slide>
-    <article>
-      <iframe data-src="http://www.google.com/doodle4google/resources/history.html"></iframe>
+      <ul class="build">
+        <li>Have the confidence to dive into JavaScript</li>
+        <li>New APIs are very similar to what you already know, it's just syntax!</li>
+        <li>Use jQuery when appropriate, not as a must</li>
+        <li>Checkout browser support and polyfill when needed</li>
+      </ul>
     </article>
   </slide>
 
