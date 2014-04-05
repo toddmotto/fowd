@@ -215,6 +215,7 @@ URL: https://code.google.com/p/io-2012-slides
           </ul>
         </li>
         <li>jQuery is often restricting when mixing with JS</li>
+        <li>JavaScript performance far outweighs jQuery's</li>
         <li>JavaScript is not about the browser anymore!</li>
       </ul>
     </article>
@@ -231,260 +232,106 @@ URL: https://code.google.com/p/io-2012-slides
   <slide>
     <hgroup>
       <h2>Class manipulation</h2>
-      <h3>jQuery and JS equivalents</h3>
+      <h3>jsfiddle.net/toddmotto/Cst3L</h3>
     </hgroup>
     <article>
-<pre class="prettyprint" data-lang="jquery">
-  // jQuery wraps your code in it's own Object
-  // which contains the addClass() method
-  $(element).addClass('myClass');
-</pre>
-<pre class="prettyprint" data-lang="javascript">
-  // JavaScript uses a DOMTokenList to contain
-  // the class names, returned via the classList Object
-  element.classList.add('myClass');
-</pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Code Slide (Smaller Font)</h2>
-    </hgroup>
-    <article class="smaller">
+      <pre class="prettyprint" data-lang="jquery">
+// jQuery wraps your code in it's own Object
+// which contains the addClass() method
+$(elem).addClass('fowd');
+      </pre>
       <pre class="prettyprint" data-lang="javascript">
-// Say hello world until the user starts questioning
-// the meaningfulness of their existence.
-function helloWorld(world) {
-  for (var i = 42; --i &gt;= 0;) {
-    alert('Hello ' + String(world));
-  }
+// JavaScript uses a DOMTokenList to contain
+// the class names, returned via the classList Object
+elem.classList.add('fowd');
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Array looping</h2>
+      <h3>jsfiddle.net/toddmotto/2QLwV</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="jquery">
+var one = [52, 97, 33, 21, 7];
+$.each(one, function(index, value) {
+    console.log('one:', index, value);
+});
+      </pre>
+      <pre class="prettyprint" data-lang="javascript">
+var two = [52, 97, 33, 21, 7];
+two.forEach(function (value, index) {
+    console.log('two:', index, value);
+});
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Object looping</h2>
+      <h3>jsfiddle.net/toddmotto/QGyMR</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="jquery">
+var one = { name: 'Todd', location: 'UK' };
+$.each(one, function(index, value) {
+    console.log('one:', index, value);
+});
+      </pre>
+      <pre class="prettyprint" data-lang="javascript">
+var two = { name: 'Todd', location: 'UK' };
+for (var prop in two) {
+    console.log('two:', prop, two[prop]);
 }
-</pre>
-<pre class="prettyprint" data-lang="css">
-&lt;style&gt;
-  p { color: pink }
-  b { color: blue }
-&lt;/style&gt;
-</pre>
-<pre class="prettyprint" data-lang="html">
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-  &lt;title>My Awesome Page&lt;/title>
-&lt;/head>
-&lt;body>
-  &lt;p&gt;Hello world&lt;/p&gt;
-&lt;body>
-&lt;/html>
-</pre>
+      </pre>
     </article>
   </slide>
 
   <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>Point I wanted to make #1</li>
-          <li>Point I wanted to make #2</li>
-          <li>Point I wanted to make #3</li>
-          <li>Example <a href="#">link</a> in notes.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
     <hgroup>
-      <h2>Slide with Speaker Notes</h2>
+      <h2>Getting/setting attributes</h2>
+      <h3>jsfiddle.net/toddmotto/ScrXm</h3>
     </hgroup>
     <article>
-      <p>Press 'p' to toggle speaker notes.</p>
+      <pre class="prettyprint" data-lang="jquery">
+$(elem).attr('data-jquery', 'test'); // set
+$(elem).attr('data-jquery'); // get
+      </pre>
+      <pre class="prettyprint" data-lang="javascript">
+elem.setAttribute('data-jquery', 'test'); // set
+elem.getAttribute('data-jquery'); // get
+      </pre>
     </article>
   </slide>
 
   <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>See this amazing link: <a href="http://www.google.com">link</a>.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
     <hgroup>
-      <h2>Presenter Mode</h2>
+      <h2>Event listeners</h2>
+      <h3>jsfiddle.net/toddmotto/2jNhL</h3>
     </hgroup>
     <article>
-      <p>Add <code><a href="?presentme=true" target="_self">?presentme=true</a></code> to the URL to enabled presenter mode.
-      This setting is sticky, meaning refreshing the page will persist presenter
-      mode.</p>
-      <p>Hit <code><a href="?presentme=false" target="_self">?presentme=false</a></code> to disable presenter mode.</p>
+      <pre class="prettyprint" data-lang="jquery">
+$(elem).on('click', function () {
+
+});
+      </pre>
+      <pre class="prettyprint" data-lang="javascript">
+elem.addEventListener('click', function () {
+
+});
+      </pre>
     </article>
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Slide with Image</h2>
-    </hgroup>
-    <article>
-      <img src="images/chart.png" class="reflect" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Slide with Image (Centered horz/vert)</h2>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <img src="images/barchart.png" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Table Option A</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Table Option A (Smaller Text)</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article class="smaller">
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Table Option B</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table class="rows">
-        <tr>
-          <th>Header 1</th><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 2</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 3</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 4</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 5</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Slide Styles</h2>
-    </hgroup>
-    <article class="smaller">
-      <div class="columns-2">
-        <ul>
-          <li class="red">class="red"</li>
-          <li class="red2">class="red2"</li>
-          <li class="red3">class="red3"</li>
-          <li class="blue">class="blue"</li>
-          <li class="blue2">class="blue2"</li>
-          <li class="blue3">class="blue3"</li>
-          <li class="green">class="green"</li>
-          <li class="green2">class="green2"</li>
-        </ul>
-        <ul>
-          <li class="green3">class="green3"</li>
-          <li class="yellow">class="yellow"</li>
-          <li class="yellow2">class="yellow2"</li>
-          <li class="yellow3">class="yellow3"</li>
-          <li class="gray">class="gray"</li>
-          <li class="gray2">class="gray2"</li>
-          <li class="gray3">class="gray3"</li>
-          <li class="gray4">class="gray4"</li>
-        </ul>
-      </div>
-      <div class="centered" style="margin-top:2em">
-        I am centered text with a <button>Button</button> and <button disabled>Disabled</button> button.
-      </div>
-    </article>
-  </slide>
 
-  <slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/fowd_128.png"></aside>
-    <hgroup class="auto-fadein">
-      <h2>Segue Slide</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-  </slide>
-
-  <slide class="fill nobackground" style="background-image: url(images/sky.jpg)">
-    <hgroup>
-      <h2 class="white">Full Image (with Optional Header)</h2>
-    </hgroup>
-    <footer class="source white">www.flickr.com/photos/25797459@N06/5438799763/</footer>
-  </slide>
-
-  <slide class="segue dark quote nobackground">
-    <aside class="gdbar right bottom"><img src="images/fowd_128.png"></aside>
-    <article class="flexbox vleft auto-fadein">
-      <q>
-        This is an example of quote text.
-      </q>
-      <div class="author">
-        Name<br>
-        Company
-      </div>
-    </article>
-  </slide>
 
   <slide>
     <hgroup>
