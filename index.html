@@ -26,12 +26,6 @@ URL: https://code.google.com/p/io-2012-slides
 
 <slides class="layout-widescreen">
 
-  <slide class="logoslide nobackground">
-    <article class="flexbox vcenter">
-      <span><img src="images/js.png"></span>
-    </article>
-  </slide>
-
   <slide class="title-slide segue nobackground">
     <aside class="gdbar"><img src="images/fowd_128.png"></aside>
     <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
@@ -231,7 +225,25 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Class manipulation</h2>
+      <h2>Selectors</h2>
+      <h3>jsfiddle.net/toddmotto/g5t2K</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="jquery">
+// '.classes', '[attributes]', '#ids'
+$(elem);
+      </pre>
+      <pre class="prettyprint" data-lang="javascript">
+// '.classes', '[attributes]', '#ids'
+document.querySelector(elem);
+document.querySelectorAll(elems);
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Class manipulation: syntax</h2>
       <h3>jsfiddle.net/toddmotto/Cst3L</h3>
     </hgroup>
     <article>
@@ -250,20 +262,30 @@ elem.classList.add('fowd');
 
   <slide>
     <hgroup>
-      <h2>Array looping</h2>
+      <h2>Class manipulation: performance</h2>
+      <h3>jsperf.com/addclass-versus-classlist-api</h3>
+    </hgroup>
+    <article>
+      <img src="images/jsperf/classes.png">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Array looping: syntax</h2>
       <h3>jsfiddle.net/toddmotto/2QLwV</h3>
     </hgroup>
     <article>
       <pre class="prettyprint" data-lang="jquery">
 var one = [52, 97, 33, 21, 7];
 $.each(one, function(index, value) {
-    console.log('one:', index, value);
+  console.log('one:', index, value);
 });
       </pre>
       <pre class="prettyprint" data-lang="javascript">
 var two = [52, 97, 33, 21, 7];
 two.forEach(function (value, index) {
-    console.log('two:', index, value);
+  console.log('two:', index, value);
 });
       </pre>
     </article>
@@ -271,20 +293,30 @@ two.forEach(function (value, index) {
 
   <slide>
     <hgroup>
-      <h2>Object looping</h2>
+      <h2>Array looping: performance</h2>
+      <h3>jsperf.com/jquery-each-vs-js-foreach-for</h3>
+    </hgroup>
+    <article>
+      <img src="images/jsperf/arrays.png">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Object looping: syntax</h2>
       <h3>jsfiddle.net/toddmotto/QGyMR</h3>
     </hgroup>
     <article>
       <pre class="prettyprint" data-lang="jquery">
 var one = { name: 'Todd', location: 'UK' };
 $.each(one, function(index, value) {
-    console.log('one:', index, value);
+  console.log('one:', index, value);
 });
       </pre>
       <pre class="prettyprint" data-lang="javascript">
 var two = { name: 'Todd', location: 'UK' };
 for (var prop in two) {
-    console.log('two:', prop, two[prop]);
+  console.log('two:', prop, two[prop]);
 }
       </pre>
     </article>
@@ -292,7 +324,17 @@ for (var prop in two) {
 
   <slide>
     <hgroup>
-      <h2>Getting/setting attributes</h2>
+      <h2>Object looping: performance</h2>
+      <h3>jsperf.com/jquery-each-versus-for-in-js-fowd</h3>
+    </hgroup>
+    <article>
+      <img src="images/jsperf/objects.png">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Get/set attributes: syntax</h2>
       <h3>jsfiddle.net/toddmotto/ScrXm</h3>
     </hgroup>
     <article>
@@ -309,7 +351,17 @@ elem.getAttribute('data-jquery'); // get
 
   <slide>
     <hgroup>
-      <h2>Event listeners</h2>
+      <h2>Get/set attributes: performance</h2>
+      <h3>jsperf.com/get-set-attrs-jquery-versus-javascript-fowd</h3>
+    </hgroup>
+    <article>
+      <img src="images/jsperf/attrs.png">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Event listeners: syntax</h2>
       <h3>jsfiddle.net/toddmotto/2jNhL</h3>
     </hgroup>
     <article>
@@ -326,23 +378,145 @@ elem.addEventListener('click', function () {
     </article>
   </slide>
 
-
-
-
-
-
-
+  <slide>
+    <hgroup>
+      <h2>Event listeners: performance</h2>
+      <h3>jsperf.com/jquery-on-versus-ael-fowd</h3>
+    </hgroup>
+    <article>
+      <img src="images/jsperf/events.png">
+    </article>
+  </slide>
 
   <slide>
     <hgroup>
-      <h2>Summing up (tl;dl)</h2>
+      <h2>DOM Ready: syntax</h2>
+      <h3></h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="jquery">
+$(document).ready(function () {
+
+});
+      </pre>
+      <pre class="prettyprint" data-lang="javascript">
+document.addEventListener('DOMContentLoaded', function () {
+
+});
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>DOM Ready: performance</h2>
+      <h3>jsperf.com/js-jquery-ready-fowd</h3>
+    </hgroup>
+    <article>
+      <img src="images/jsperf/dom.png">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>CSS manipulation: syntax</h2>
+      <h3>jsfiddle.net/toddmotto/fjDm5</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="jquery">
+$(elem).css({
+  "background" : "#000",
+  "color" : "#fff"
+});
+      </pre>
+      <pre class="prettyprint" data-lang="javascript">
+var elem = document.querySelector(elem);
+elem.style.background = '#000';
+elem.style.color = '#fff';
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>CSS manipulation: performance</h2>
+      <h3>jsperf.com/jquery-js-css-fowd</h3>
+    </hgroup>
+    <article>
+      <img src="images/jsperf/css.png">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Ajax requests (1/2)</h2>
+      <h3>jsfiddle.net/toddmotto/WU24r</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="jquery">
+var url = '//maps.googleapis.com/maps/api/geocode/json?address=London+UK&sensor=false';
+$.ajax(url)
+.done(function (data) {
+  console.log('$.ajax', data);
+  // done
+})
+.fail(function () {
+  // fail
+})
+.always(function () {
+  // complete
+});
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Ajax requests (2/2)</h2>
+      <h3>jsfiddle.net/toddmotto/WU24r</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+var url = '//maps.googleapis.com/maps/api/geocode/json?address=London+UK&sensor=false';
+var xhr = new XMLHttpRequest();
+xhr.open('GET', url, true);
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200) {
+      console.log('XMLHttpRequest()', xhr.responseText);
+      // done
+    } else {
+      // fail
+    }
+  }
+};
+xhr.send();
+      </pre>
+    </article>
+  </slide>
+
+  <slide class="segue dark quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/fowd_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <q>
+        At the very least, make sure you know what jQuery is doing for you, and what it's not.
+      </q>
+      <div class="author">
+        youmightnotneedjquery.com<br>
+        <i>HubSpot</i>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Summing up</h2>
     </hgroup>
     <article>
       <ul class="build">
-        <li>Have the confidence to dive into JavaScript</li>
-        <li>New APIs are very similar to what you already know, it's just syntax!</li>
-        <li>Use jQuery when appropriate, not as a must</li>
-        <li>Checkout browser support and polyfill when needed</li>
+        <li>Learn the language, not the library</li>
+        <li>Use jQuery when appropriate, not as a necessity</li>
+        <li>Understand what's happening "under the hood" of jQuery</li>
       </ul>
     </article>
   </slide>
@@ -350,8 +524,8 @@ elem.addEventListener('click', function () {
   <slide class="thank-you-slide segue nobackground">
     <aside class="gdbar right"><img src="images/fowd_128.png"></aside>
     <article class="flexbox vleft auto-fadein">
-      <h2>&lt;Thank You!&gt;</h2>
-      <p>Important contact information goes here.</p>
+      <h2>Thank you!</h2>
+      <p>Happy coding!</p>
     </article>
     <p class="auto-fadein" data-config-contact>
       <!-- populated from slide_config.json -->
