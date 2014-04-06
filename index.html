@@ -41,7 +41,7 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Who?</h2>
     </hgroup>
     <article>
-      <img src="images/todd.jpg" style="width: 250px; margin: 0 0 40px;">
+      <img src="images/todd.jpg" style="width: 550px; margin: 0 0 40px;">
       <ul class="build">
         <li>@toddmotto</li>
         <li>Lead front-end engineer @appsbroker</li>
@@ -59,8 +59,10 @@ URL: https://code.google.com/p/io-2012-slides
     <article>
       <ul class="build">
         <li>Misconceptions of jQuery and JavaScript</li>
+        <li>Evaluate why we use jQuery, is it necessary?</li>
         <li>Why JavaScript skills are important</li>
-        <li>Take your existing knowledge of jQuery to learn JavaScript</li>
+        <li>Take existing knowledge of jQuery to learn JavaScript</li>
+        <li>Advantages/performance measures of JS/jQuery</li>
       </ul>
     </article>
   </slide>
@@ -80,7 +82,7 @@ URL: https://code.google.com/p/io-2012-slides
     <article>
       <ul class="build">
         <li>is a language</li>
-        <li>is easier than JavaScript</li>
+        <li>is [always] easier than JavaScript</li>
         <li>helps me write less code</li>
         <li>will always have me covered</li>
         <li>is the only way</li>
@@ -103,9 +105,8 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <ul class="build">
-        <li>is impossible to learn</li>
-        <li>isn't easily cross-browser</li>
-        <li>is for programmers only</li>
+        <li>is too difficult to learn</li>
+        <li>isn't cross-browser without writing loads of code</li>
         <li>isn't necessary because jQuery exists</li>
       </ul>
     </article>
@@ -120,8 +121,8 @@ URL: https://code.google.com/p/io-2012-slides
         <li>Fear of JavaScript</li>
         <li>Reliance on jQuery</li>
         <li>New developers learning only jQuery</li>
-        <li>Copy and paste advocates</li>
-        <li>Misguided use of a core front-end language</li>
+        <li>Hard to find JavaScript resources/answers</li>
+        <li>Missing out on "the rest" of JavaScript</li>
         <li>"Just use jQuery"...</li>
       </ul>
     </article>
@@ -197,20 +198,18 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <ul class="build">
-        <li>Learn JavaScript, learn library syntax and other libs</li>
-        <li>jQuery cannot provide everything JavaScript has to offer</li>
-        <li>Reliance on jQuery isn't sustainable</li>
-        <li>Learning JavaScript will better you on many levels:
+        <li>Learn JavaScript, learn library syntax and other libs (OTI)</li>
+        <li>jQuery cannot provide everything JavaScript has to offer
           <ul class="build">
-            <li>Debugging/workarounds</li>
-            <li>Design patterns and structure</li>
-            <li>Career goals/interviews</li>
-            <li>Mastering a language</li>
+            <li>Scope, hoisting</li>
+            <li>Object-oriented/Prototype/Modules</li>
+            <li>Logic understanding, internal processes of jQuery</li>
           </ul>
         </li>
-        <li>jQuery is often restricting when mixing with JS</li>
+        <li>Reliance on jQuery isn't sustainable</li>
+        <li>Total control and understanding over what you write</li>
         <li>JavaScript performance far outweighs jQuery's</li>
-        <li>JavaScript is not about the browser anymore!</li>
+        <li>jQuery is heavily DOM focused, (JS is on the server now too!)</li>
       </ul>
     </article>
   </slide>
@@ -225,7 +224,7 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Selectors</h2>
+      <h2>Selectors: syntax</h2>
       <h3>jsfiddle.net/toddmotto/g5t2K</h3>
     </hgroup>
     <article>
@@ -238,6 +237,16 @@ $(elem);
 document.querySelector(elem);
 document.querySelectorAll(elems);
       </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Selectors: performance</h2>
+      <h3>jsperf.com/selectors-fowd</h3>
+    </hgroup>
+    <article>
+      <img src="images/jsperf/selectors.png">
     </article>
   </slide>
 
@@ -449,7 +458,7 @@ elem.style.color = '#fff';
 
   <slide>
     <hgroup>
-      <h2>Ajax requests (1/2)</h2>
+      <h2>Ajax requests: syntax (1/2)</h2>
       <h3>jsfiddle.net/toddmotto/WU24r</h3>
     </hgroup>
     <article>
@@ -472,7 +481,7 @@ $.ajax(url)
 
   <slide>
     <hgroup>
-      <h2>Ajax requests (2/2)</h2>
+      <h2>Ajax requests: syntax (2/2)</h2>
       <h3>jsfiddle.net/toddmotto/WU24r</h3>
     </hgroup>
     <article>
@@ -492,6 +501,16 @@ xhr.onreadystatechange = function () {
 };
 xhr.send();
       </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Ajax requests: performance</h2>
+      <h3>jsperf.com/jquery-ajax-xhr-fowd</h3>
+    </hgroup>
+    <article>
+      <img src="images/jsperf/xhr.png">
     </article>
   </slide>
 
@@ -515,7 +534,7 @@ xhr.send();
     <article>
       <ul class="build">
         <li>Learn the language, not the library</li>
-        <li>Use jQuery when appropriate, not as a necessity</li>
+        <li>Use jQuery when appropriate, not as an alternative</li>
         <li>Understand what's happening "under the hood" of jQuery</li>
       </ul>
     </article>
@@ -525,17 +544,11 @@ xhr.send();
     <aside class="gdbar right"><img src="images/fowd_128.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <h2>Thank you!</h2>
-      <p>Happy coding!</p>
+      <p>speakerdeck.com/toddmotto</p>
     </article>
     <p class="auto-fadein" data-config-contact>
       <!-- populated from slide_config.json -->
     </p>
-  </slide>
-
-  <slide class="logoslide dark nobackground">
-    <article class="flexbox vcenter">
-      <span><img src="images/google_developers_logo_white.png"></span>
-    </article>
   </slide>
 
   <slide class="backdrop"></slide>

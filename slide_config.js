@@ -24,7 +24,6 @@ var SLIDE_CONFIG = {
   presenters: [{
     name: 'Todd Motto',
     company: 'Lead front-end engineer<br>Appsbroker',
-    gplus: 'http://plus.google.com/1234567890',
     twitter: '@toddmotto',
     www: 'http://toddmotto.com',
     github: 'http://github.com/toddmotto'
