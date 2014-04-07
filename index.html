@@ -81,12 +81,11 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <ul class="build">
-        <li>is a language</li>
-        <li>is [always] easier than JavaScript</li>
         <li>helps me write less code</li>
         <li>will always have me covered</li>
-        <li>is the only way</li>
+        <li>is the only way to develop front-end code</li>
         <li>is a must for cross-browser code</li>
+        <li>is a must for complex selections</li>
       </ul>
     </article>
   </slide>
@@ -122,7 +121,7 @@ URL: https://code.google.com/p/io-2012-slides
         <li>Reliance on jQuery</li>
         <li>New developers learning only jQuery</li>
         <li>Hard to find JavaScript resources/answers</li>
-        <li>Missing out on "the rest" of JavaScript</li>
+        <li>Obscured what JavaScript really is</li>
         <li>"Just use jQuery"...</li>
       </ul>
     </article>
@@ -198,18 +197,11 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <ul class="build">
-        <li>Learn JavaScript, learn library syntax and other libs (OTI)</li>
-        <li>jQuery cannot provide everything JavaScript has to offer
-          <ul class="build">
-            <li>Scope, closures, hoisting</li>
-            <li>Object-oriented/Prototype/Modules</li>
-            <li>Logic understanding, internal processes of jQuery</li>
-          </ul>
-        </li>
+        <li>Learning JavaScript is a one-time investment</li>
+        <li>JavaScript performance far outweighs jQuery's</li>
         <li>Reliance on jQuery isn't sustainable</li>
         <li>Total control and understanding over what you write</li>
-        <li>JavaScript performance far outweighs jQuery's</li>
-        <li>jQuery is heavily DOM focused, (JS is on the server now too!)</li>
+        <li>jQuery is heavily DOM focused (JS is on the server now too!)</li>
       </ul>
     </article>
   </slide>
@@ -257,7 +249,7 @@ document.querySelectorAll(elems);
     </hgroup>
     <article>
       <pre class="prettyprint" data-lang="jquery">
-// jQuery wraps your code in it's own Object
+// jQuery wraps your code in its own Object
 // which contains the addClass() method
 $(elem).addClass('fowd');
       </pre>
@@ -276,68 +268,6 @@ elem.classList.add('fowd');
     </hgroup>
     <article>
       <img src="images/jsperf/classes.png">
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Array looping: syntax</h2>
-      <h3>jsfiddle.net/toddmotto/2QLwV</h3>
-    </hgroup>
-    <article>
-      <pre class="prettyprint" data-lang="jquery">
-var one = [52, 97, 33, 21, 7];
-$.each(one, function(index, value) {
-  console.log('one:', index, value);
-});
-      </pre>
-      <pre class="prettyprint" data-lang="javascript">
-var two = [52, 97, 33, 21, 7];
-two.forEach(function (value, index) {
-  console.log('two:', index, value);
-});
-      </pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Array looping: performance</h2>
-      <h3>jsperf.com/jquery-each-vs-js-foreach-for</h3>
-    </hgroup>
-    <article>
-      <img src="images/jsperf/arrays.png">
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Object looping: syntax</h2>
-      <h3>jsfiddle.net/toddmotto/QGyMR</h3>
-    </hgroup>
-    <article>
-      <pre class="prettyprint" data-lang="jquery">
-var one = { name: 'Todd', location: 'UK' };
-$.each(one, function(index, value) {
-  console.log('one:', index, value);
-});
-      </pre>
-      <pre class="prettyprint" data-lang="javascript">
-var two = { name: 'Todd', location: 'UK' };
-for (var prop in two) {
-  console.log('two:', prop, two[prop]);
-}
-      </pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Object looping: performance</h2>
-      <h3>jsperf.com/jquery-each-versus-for-in-js-fowd</h3>
-    </hgroup>
-    <article>
-      <img src="images/jsperf/objects.png">
     </article>
   </slide>
 
@@ -514,6 +444,68 @@ xhr.send();
     </article>
   </slide>
 
+  <slide>
+    <hgroup>
+      <h2>Array looping: syntax</h2>
+      <h3>jsfiddle.net/toddmotto/2QLwV</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="jquery">
+var one = [52, 97, 33, 21, 7];
+$.each(one, function(index, value) {
+  console.log('one:', index, value);
+});
+      </pre>
+      <pre class="prettyprint" data-lang="javascript">
+var two = [52, 97, 33, 21, 7];
+two.forEach(function (value, index) {
+  console.log('two:', index, value);
+});
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Array looping: performance</h2>
+      <h3>jsperf.com/jquery-each-vs-js-foreach-for</h3>
+    </hgroup>
+    <article>
+      <img src="images/jsperf/arrays.png">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Object looping: syntax</h2>
+      <h3>jsfiddle.net/toddmotto/QGyMR</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="jquery">
+var one = { name: 'Todd', location: 'UK' };
+$.each(one, function(index, value) {
+  console.log('one:', index, value);
+});
+      </pre>
+      <pre class="prettyprint" data-lang="javascript">
+var two = { name: 'Todd', location: 'UK' };
+for (var prop in two) {
+  console.log('two:', prop, two[prop]);
+}
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Object looping: performance</h2>
+      <h3>jsperf.com/jquery-each-versus-for-in-js-fowd</h3>
+    </hgroup>
+    <article>
+      <img src="images/jsperf/objects.png">
+    </article>
+  </slide>
+
   <slide class="segue dark quote nobackground">
     <aside class="gdbar right bottom"><img src="images/fowd_128.png"></aside>
     <article class="flexbox vleft auto-fadein">
@@ -529,13 +521,62 @@ xhr.send();
 
   <slide>
     <hgroup>
+      <h2>Browser support of JS APIs</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>querySelector/querySelectorAll: IE8+ (CSS2 selectors for IE8)</li>
+        <li>setAttribute/getAttribute: IE6+</li>
+        <li>classList: IE10+, Chrome etc.</li>
+        <li>Array forEach: IE9+</li>
+        <li>Object for-in: IE6+</li>
+        <li>addEventListener: IE9+</li>
+        <li>DOMContentLoaded: IE9+</li>
+        <li>Style Object (elem.style.color = '#fff'): IE6+</li>
+        <li>XMLHttpRequest: IE7+ (ActiveXObject for &lt;IE7)</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>What if I want to use the above, but need legacy support?</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Polyfill when appropriate (github.com/modernizr)</li>
+        <li>Try a micro-library or write a wrapper to provide fallbacks</li>
+        <li>Use jQuery if it makes sense!</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>When to use jQuery</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>IE6,7,8.. probably</li>
+        <li>When it makes sense to, don't rewrite existing functionality</li>
+        <li>When you're saving time!</li>
+        <li>When you're saving a lot of code</li>
+        <li>When you're relying on advanced features that require polyfilling, .bind</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
       <h2>Summing up</h2>
     </hgroup>
     <article>
       <ul class="build">
         <li>Learn the language, not the library</li>
         <li>Use jQuery when appropriate, not as an alternative</li>
-        <li>Understand what's happening "under the hood" of jQuery</li>
+        <li>Backwards compatibility won't be needed, but cross-browser quirks always will</li>
+        <li>New APIs aren't perfect, but they won't require huge abstractions</li>
+        <li>Understand what's happening "under the hood" of libraries you use</li>
       </ul>
     </article>
   </slide>
