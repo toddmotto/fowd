@@ -557,11 +557,12 @@ for (var prop in two) {
     </hgroup>
     <article>
       <ul class="build">
-        <li>IE6,7,8.. probably</li>
+        <li>IE6-8... probably</li>
+        <li>For <span style="text-decoration: underline;">complex</span> things</li>
         <li>When it makes sense to, don't rewrite existing functionality</li>
         <li>When you're saving time!</li>
         <li>When you're saving a lot of code</li>
-        <li>When you're relying on advanced features that require polyfilling, .bind</li>
+        <li>When you're relying on advanced features that aren't polyfilled</li>
       </ul>
     </article>
   </slide>
@@ -574,7 +575,9 @@ for (var prop in two) {
       <ul class="build">
         <li>Learn the language, not the library</li>
         <li>Use jQuery when appropriate, not as an alternative</li>
-        <li>Backwards compatibility won't be needed, but cross-browser quirks always will</li>
+        <li>JavaScript APIs are somewhat easier when compared</li>
+        <li>Backwards compatibility won't always be needed</li>
+        <li>Browser quirks may need wrapper fixes, not libraries</li>
         <li>New APIs aren't perfect, but they won't require huge abstractions</li>
         <li>Understand what's happening "under the hood" of libraries you use</li>
       </ul>
