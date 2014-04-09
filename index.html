@@ -180,13 +180,13 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <ul class="build">
-        <li>Cross-browser consistencies (standards!)</li>
-      	<li>Easy and consistent APIs</li>
-      	<li>Shorter learning curve</li>
-      	<li>Selectors (querySelector!)</li>
+        <li>Cross-browser consistencies (ECMAScript-262 standards)</li>
+      	<li>Easy and consistent APIs (Prototype methods)</li>
+      	<li>Short<span style="font-style: italic; font-weight: 900;">er</span> learning curve</li>
+      	<li>Selectors (querySelector/querySelectorAll)</li>
       	<li>Class manipulation (classList API)</li>
       	<li>Event standards (addEventListener)</li>
-      	<li>Allows JS developers to build micro libs (Ajax/XHR, animation)</li>
+      	<li>Allows developers to build micro libs (Ajax/XHR, animation)</li>
       </ul>
     </article>
   </slide>
@@ -210,7 +210,7 @@ URL: https://code.google.com/p/io-2012-slides
         <li>Reliance on jQuery isn't sustainable</li>
         <li>Total control and understanding over what you write</li>
         <li>jQuery is heavily DOM focused (JS is on the server now too!)</li>
-        <li>JavaScript and HTML5 are friends</li>
+        <li>JavaScript and HTML5 are the future!</li>
       </ul>
     </article>
   </slide>
@@ -218,7 +218,7 @@ URL: https://code.google.com/p/io-2012-slides
   <slide class="segue dark nobackground">
     <aside class="gdbar"><img src="images/fowd_128.png"></aside>
     <hgroup class="auto-fadein">
-      <h2>What's next?</h2>
+      <h2>What now?</h2>
       <h3>Can we use existing knowledge to transition?</h3>
     </hgroup>
   </slide>
@@ -372,12 +372,14 @@ document.addEventListener('DOMContentLoaded', function () {
     </hgroup>
     <article>
       <pre class="prettyprint" data-lang="jquery">
+// creates an Object, will loop internally
 $(elem).css({
   "background" : "#000",
   "color" : "#fff"
 });
       </pre>
       <pre class="prettyprint" data-lang="javascript">
+// extend the Style Object, pure write, no loops
 var elem = document.querySelector(elem);
 elem.style.background = '#000';
 elem.style.color = '#fff';
