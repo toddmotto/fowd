@@ -191,6 +191,14 @@ URL: https://code.google.com/p/io-2012-slides
     </article>
   </slide>
 
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/fowd_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Cross-browser inconsistencies won't be around forever</h2>
+      <h3>We're not going to need huge libraries to abstract JavaScript problems</h3>
+    </hgroup>
+  </slide>
+
   <slide>
     <hgroup>
       <h2>Why do I need to learn this stuff?</h2>
@@ -202,6 +210,7 @@ URL: https://code.google.com/p/io-2012-slides
         <li>Reliance on jQuery isn't sustainable</li>
         <li>Total control and understanding over what you write</li>
         <li>jQuery is heavily DOM focused (JS is on the server now too!)</li>
+        <li>JavaScript and HTML5 are friends</li>
       </ul>
     </article>
   </slide>
@@ -567,6 +576,246 @@ for (var prop in two) {
     </article>
   </slide>
 
+  <slide class="segue dark quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/fowd_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <q>
+        You don't need to be an expert, but JavaScript skills will help you better understand
+        the language as well as any libraries you decide to choose.
+      </q>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Refactor: Selectors/classes (1/2)</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="jquery">
+// cache the jQuery Object + selector
+var $nav = $('.nav');
+
+// function to toggle the nav
+var toggleNav = function () {
+  if ($(this).hasClass('active')) {
+    $(this).removeClass('active');
+  } else {
+    $(this).addClass('active');
+  }
+};
+
+// bind even handler(s)
+nav.on('click', toggleNav);
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Refactor: Selectors/classes (2/2)</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+// drop the new jQuery Object, revert to querySelector
+var nav = document.querySelector('.nav');
+
+// function declaration remains, but the `this` value isn't
+// passed into jQuery - we ride off the element's classList Object
+var toggleNav = function () {
+  if (this.classList.contains('active')) {
+    this.classList.remove('active');
+  } else {
+    this.classList.add('active');
+  }
+};
+
+// use the standardised AEL
+nav.addEventListener('click', toggleNav, false);
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Refactor: Element loops (1/2)</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+// jQuery stores elements in an Array
+$('.items').each(function (index, value) {
+  var item = value;
+});
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Refactor: Element loops (2/2)</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+// JavaScript uses NodeLists with querySelector/querySelectorAll
+// using forEach here wouldn't work, NodeLists are different to Arrays
+// as their Prototype Objects do not contain the forEach property
+var items = document.querySelectorAll('.items');
+for (var i = 0; i &lt; items.length; i++) {
+  var item = items[i];
+}
+      </pre>
+    </article>
+  </slide>
+
+  <slide class="segue dark quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/fowd_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <q>
+        HTML5 needs JavaScript, not jQuery.
+      </q>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>HTML5 + JS: localStorage</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+var username = 'Todd';
+localStorage.setItem('name', username);
+// { name: 'Todd' }
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>HTML5 + JS: Video</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+&lt;video src="myawesomevid.mp4" class="video-elem"&gt;&lt;/video&gt;
+&lt;a href="#" class="video-play"&gt;Play&lt;/a&gt;
+&lt;a href="#" class="video-pause"&gt;Play&lt;/a&gt;
+      </pre>
+      <pre class="prettyprint" data-lang="javascript">
+var video = document.querySelector('.video-elem');
+var play = document.querySelector('.video-play');
+
+var playVideo = function () {
+  video.play();
+};
+
+play.addEventListener('click', playVideo, false);
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>HTML5 + JS: Fullscreen</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+var goFullScreen = function (elem) {
+  if(elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if(elem.mozRequestFullScreen) {
+    elem.mozRequestFullScreen();
+  } else if(elem.webkitRequestFullscreen) {
+    elem.webkitRequestFullscreen();
+  } else if(elem.msRequestFullscreen) {
+    elem.msRequestFullscreen();
+  }
+}
+goFullScreen(document.documentElement);
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>HTML5 + JS: Geolocation</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function (pos) {
+    // pos.coords.latitude
+    // pos.coords.longtitude
+  });
+} else {
+  // no Geo support
+}
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>HTML5 + JS: Canvas</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+&lt;canvas&gt;&lt;/canvas&gt;
+      </pre>
+      <pre class="prettyprint" data-lang="javascript">
+var canvas = document.querySelector('canvas');
+var ctx = canvas.getContext('2d');
+ctx.fillStyle = '#ff000';
+ctx.fillRect(0,0,150,75);
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>HTML5 + JS: History API</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+// go backward
+window.history.back();
+
+// go forward
+window.history.forward();
+
+// specific points, back 2
+window.history.go(-2);
+
+// specific points, forward 2
+window.history.go(2);
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>HTML5 + JS: Web RTC</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+if (navigator.getUserMedia) {
+  navigator.getUserMedia(
+    { video: true, audio: true },
+    function(mediaStream) {
+    // do something with mediaStream
+    },
+  errorCallback);
+}
+      </pre>
+    </article>
+  </slide>
+
+  <slide class="segue dark quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/fowd_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <q>
+        The future is rapidly approaching, and it's a lot of JavaScript.
+      </q>
+    </article>
+  </slide>
+
   <slide>
     <hgroup>
       <h2>Summing up</h2>
@@ -580,6 +829,7 @@ for (var prop in two) {
         <li>Browser quirks may need wrapper fixes, not libraries</li>
         <li>New APIs aren't perfect, but they won't require huge abstractions</li>
         <li>Understand what's happening "under the hood" of libraries you use</li>
+        <li>Don't just take the easy route, challenge yourself to understand JavaScript</li>
       </ul>
     </article>
   </slide>
